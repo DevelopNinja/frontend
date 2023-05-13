@@ -1,0 +1,12 @@
+com.jrai.flutter_keyboard_visibility-jetified-window-java-1.0.0-beta04-0 C:\Users\bitup\.gradle\caches\transforms-3\006d93cd422dbc43e89591147c2de572\transformed\jetified-window-java-1.0.0-beta04\res
+com.jrai.flutter_keyboard_visibility-core-1.6.0-1 C:\Users\bitup\.gradle\caches\transforms-3\4ca28c4a71705f8a687c69dda140a277\transformed\core-1.6.0\res
+com.jrai.flutter_keyboard_visibility-jetified-annotation-experimental-1.1.0-2 C:\Users\bitup\.gradle\caches\transforms-3\8965c941cf4bee4d72541b965c7c9d39\transformed\jetified-annotation-experimental-1.1.0\res
+com.jrai.flutter_keyboard_visibility-jetified-window-1.0.0-beta04-3 C:\Users\bitup\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\res
+com.jrai.flutter_keyboard_visibility-main-4 C:\Users\bitup\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_keyboard_visibility-5.4.1\android\src\main\res
+com.jrai.flutter_keyboard_visibility-release-5 C:\Users\bitup\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_keyboard_visibility-5.4.1\android\src\release\res
+com.jrai.flutter_keyboard_visibility-pngs-6 C:\Users\bitup\Documents\College_Recommendation\frontend\build\flutter_keyboard_visibility\generated\res\pngs\release
+com.jrai.flutter_keyboard_visibility-resValues-7 C:\Users\bitup\Documents\College_Recommendation\frontend\build\flutter_keyboard_visibility\generated\res\resValues\release
+com.jrai.flutter_keyboard_visibility-rs-8 C:\Users\bitup\Documents\College_Recommendation\frontend\build\flutter_keyboard_visibility\generated\res\rs\release
+com.jrai.flutter_keyboard_visibility-mergeReleaseResources-9 C:\Users\bitup\Documents\College_Recommendation\frontend\build\flutter_keyboard_visibility\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.jrai.flutter_keyboard_visibility-mergeReleaseResources-10 C:\Users\bitup\Documents\College_Recommendation\frontend\build\flutter_keyboard_visibility\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.jrai.flutter_keyboard_visibility-merged_res-11 C:\Users\bitup\Documents\College_Recommendation\frontend\build\flutter_keyboard_visibility\intermediates\merged_res\release

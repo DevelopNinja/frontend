@@ -1,0 +1,60 @@
+<component name="libraryTable">
+  <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/battery-2.0.3/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/battery-2.0.3/example/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/camera-0.10.0+4/example/android/app/src/androidTest/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/camera_android-0.10.0+4/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/camera_android-0.10.0+4/android/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/camera_android-0.10.0+4/example/android/app/src/androidTest/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/connectivity-3.0.6/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/connectivity-3.0.6/example/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/connectivity-3.0.6/example/android/app/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/device_info-2.0.3/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.7/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.7/android/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.7/example/android/app/src/androidTest/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.7/example/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/path_provider-2.0.11/example/android/app/src/androidTest/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/path_provider_android-2.0.21/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/path_provider_android-2.0.21/android/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/path_provider_android-2.0.21/example/android/app/src/androidTest/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/url_launcher-6.1.7/example/android/app/src/androidTest/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/url_launcher_android-6.0.17/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/url_launcher_android-6.0.17/android/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/url_launcher_android-6.0.17/example/android/app/src/androidTest/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/video_player-2.2.11/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/video_player-2.2.11/android/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/video_player-2.2.11/example/android/app/src/androidTest/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/video_player-2.2.11/example/android/app/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/vm_service-9.4.0/java/src" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/.pub-cache/hosted/pub.dev/vm_service-9.4.0/java/test" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/benchmarks/macrobenchmarks/android/app/src/androidTest/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/benchmarks/macrobenchmarks/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/integration_tests/android_custom_host_app/SampleApp/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/integration_tests/android_host_app_v2_embedding/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/integration_tests/android_module_host_with_custom_build_v2_embedding/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/integration_tests/android_semantics_testing/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/integration_tests/channels/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/integration_tests/external_ui/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/integration_tests/flavors/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/integration_tests/flutter_gallery/android/app/src/androidTest/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/integration_tests/flutter_gallery/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/integration_tests/gradle_deprecated_settings/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/integration_tests/module_host_with_custom_build_v2_embedding/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/integration_tests/platform_interaction/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/integration_tests/release_smoke_test/android/app/src/androidTest/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/integration_tests/release_smoke_test/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/dev/integration_tests/ui/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/examples/flutter_view/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/examples/platform_channel/android/app/src/androidTest/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/examples/platform_channel/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/examples/platform_view/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/packages/integration_test/android/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../../../../../src/flutter/packages/integration_test/example/android/app/src/androidTest/java" />
+    </SOURCES>
+  </library>
+</component>

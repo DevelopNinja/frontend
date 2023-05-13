@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="C:\Users\bitup\Documents\College_Recommendation\frontend\android\app"
+    name=":app"
+    type="APP"
+    maven="android:app:"
+    gradle="7.2.0"
+    buildFolder="C:\Users\bitup\Documents\College_Recommendation\frontend\build\app"
+    bootClassPath="C:\Users\bitup\AppData\Local\Android\Sdk\platforms\android-33\android.jar;C:\Users\bitup\AppData\Local\Android\Sdk\build-tools\30.0.3\core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-33"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>

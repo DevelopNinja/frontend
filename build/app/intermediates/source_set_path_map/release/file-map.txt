@@ -1,0 +1,13 @@
+com.example.frontend.app-jetified-window-java-1.0.0-beta04-0 C:\Users\bitup\.gradle\caches\transforms-3\006d93cd422dbc43e89591147c2de572\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.frontend.app-core-1.6.0-1 C:\Users\bitup\.gradle\caches\transforms-3\4ca28c4a71705f8a687c69dda140a277\transformed\core-1.6.0\res
+com.example.frontend.app-jetified-annotation-experimental-1.1.0-2 C:\Users\bitup\.gradle\caches\transforms-3\8965c941cf4bee4d72541b965c7c9d39\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.frontend.app-jetified-window-1.0.0-beta04-3 C:\Users\bitup\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\res
+com.example.frontend.app-main-4 C:\Users\bitup\Documents\College_Recommendation\frontend\android\app\src\main\res
+com.example.frontend.app-release-5 C:\Users\bitup\Documents\College_Recommendation\frontend\android\app\src\release\res
+com.example.frontend.app-pngs-6 C:\Users\bitup\Documents\College_Recommendation\frontend\build\app\generated\res\pngs\release
+com.example.frontend.app-resValues-7 C:\Users\bitup\Documents\College_Recommendation\frontend\build\app\generated\res\resValues\release
+com.example.frontend.app-rs-8 C:\Users\bitup\Documents\College_Recommendation\frontend\build\app\generated\res\rs\release
+com.example.frontend.app-mergeReleaseResources-9 C:\Users\bitup\Documents\College_Recommendation\frontend\build\app\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.example.frontend.app-mergeReleaseResources-10 C:\Users\bitup\Documents\College_Recommendation\frontend\build\app\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.example.frontend.app-merged_res-11 C:\Users\bitup\Documents\College_Recommendation\frontend\build\app\intermediates\merged_res\release
+com.example.frontend.app-packaged_res-12 C:\Users\bitup\Documents\College_Recommendation\frontend\build\fluttertoast\intermediates\packaged_res\release
