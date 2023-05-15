@@ -97,6 +97,10 @@ class _Profile_DetailsState extends State<Profile_Details> {
                       const SizedBox(
                         height: 30.0,
                       ),
+                      _buildTF("Percentile", user_details[0]['percentile']),
+                      const SizedBox(
+                        height: 30.0,
+                      ),
                     ],
                   ),
                 ),

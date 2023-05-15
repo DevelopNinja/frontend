@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 List<String> College_Data = [
+  "Clear Selection",
   "2146 - Adarsh Shikshan Prasarak Mandal's K. T. Patil College of Engineering and Technology, Osmanabad",
   "1123 - Dr.Rajendra Gode Institute of Technology & Research, Amravati",
   "1117 - Janata Shikshan Prasarak Mandalâ€™s Babasaheb Naik College Of Engineering, Pusad",

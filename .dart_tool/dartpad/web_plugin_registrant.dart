@@ -6,13 +6,13 @@
 // @dart = 2.13
 // ignore_for_file: type=lint
 
-import 'package:flutter_keyboard_visibility_web/flutter_keyboard_visibility_web.dart';
 import 'package:fluttertoast/fluttertoast_web.dart';
+import 'package:url_launcher_web/url_launcher_web.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 void registerPlugins([final Registrar? pluginRegistrar]) {
   final Registrar registrar = pluginRegistrar ?? webPluginRegistrar;
-  FlutterKeyboardVisibilityPlugin.registerWith(registrar);
   FluttertoastWebPlugin.registerWith(registrar);
+  UrlLauncherPlugin.registerWith(registrar);
   registrar.registerMessageHandler();
 }

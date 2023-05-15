@@ -17,29 +17,38 @@ class AllIndia extends StatefulWidget {
 
 class _AllIndiaState extends State<AllIndia> {
   // All variables
-  String? mark, rank, branch = " ", college = " ", r = ' ';
+  String? mark, rank, branch = " ", college = " ", rnd = '1st Round', r = ' ';
   String city = " ";
-  List AI_Data = [], round = ['1', '2', '3', ' '];
+  List AI_Data = [], round = ['1st Round', '2nd Round', '3rd Round', ' '];
   var Data = [];
   // List of items in our dropdown menu
 
   void fetchData() async {
+    if (college == "Clear Selection") {
+      college = " ";
+    }
+    if (branch == "Clear Selection") {
+      branch = " ";
+    }
+    if (rnd == '1st Round') {
+      r = '1';
+    } else if (rnd == '2st Round') {
+      r = '2';
+    } else {
+      r = '3';
+    }
     if (city.isNotEmpty) {
       city = city[0].toUpperCase() + city.substring(1);
     }
 
     String uri =
-        'http://college-recommendation.onrender.com/AI/Info?Rank[gte]=$rank&Score[lte]=$mark&Round=$r';
-
-    if (rank == null || rank == '') {
-      uri =
-          'http://college-recommendation.onrender.com/AI/Info?Rank[gte]=&Score[lte]=$mark&Round=$r';
-    } else if (mark == null || mark == '') {
-      uri =
-          'http://college-recommendation.onrender.com/AI/Info?Rank[gte]=$rank&Score[lte]=&Round=$r';
-    }
+        'http://192.168.10.13:8000/AI/Info?Rank[gte]=$rank&Score[lte]=$mark&Round=$r';
 
     final response = await http.get(Uri.parse(uri));
+    print(r);
+    print(mark);
+    print(rank);
+    print(uri);
 
     if (response.statusCode == 200) {
       setState(() {
@@ -121,16 +130,11 @@ class _AllIndiaState extends State<AllIndia> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const Text(
-          'Percentile',
-          style: kLabelStyle,
-        ),
-        const SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
           decoration: kBoxDecorationStyle,
           height: 60.0,
-          width: (MediaQuery.of(context).size.width) / 3,
+          width: (MediaQuery.of(context).size.width) * (0.435),
           child: TextField(
             keyboardType: TextInputType.number,
             style: const TextStyle(
@@ -144,7 +148,7 @@ class _AllIndiaState extends State<AllIndia> {
                 Icons.numbers,
                 color: Colors.white,
               ),
-              hintText: 'Marks',
+              hintText: 'Percentile',
               hintStyle: kHintTextStyle,
             ),
             onChanged: (value) => setState(() {
@@ -160,16 +164,11 @@ class _AllIndiaState extends State<AllIndia> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const Text(
-          'City',
-          style: kLabelStyle,
-        ),
-        const SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
           decoration: kBoxDecorationStyle,
           height: 60.0,
-          width: (MediaQuery.of(context).size.width) / 3,
+          width: (MediaQuery.of(context).size.width) * (0.435),
           child: TextField(
             style: const TextStyle(
               color: Colors.white,
@@ -198,17 +197,13 @@ class _AllIndiaState extends State<AllIndia> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const Text(
-          'Rank',
-          style: kLabelStyle,
-        ),
-        const SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
           decoration: kBoxDecorationStyle,
           height: 60.0,
-          width: (MediaQuery.of(context).size.width) / 3,
+          width: (MediaQuery.of(context).size.width) * (0.435),
           child: TextField(
+            keyboardType: TextInputType.number,
             style: const TextStyle(
               color: Colors.white,
               fontFamily: 'OpenSans',
@@ -236,11 +231,6 @@ class _AllIndiaState extends State<AllIndia> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Text(
-            "College",
-            style: kLabelStyle,
-          ),
-          const SizedBox(height: 10),
           Container(
             width: (MediaQuery.of(context).size.width),
             decoration: BoxDecoration(
@@ -258,10 +248,13 @@ class _AllIndiaState extends State<AllIndia> {
                 child: DropdownSearch<String>(
               autoValidateMode: AutovalidateMode.onUserInteraction,
               dropdownBuilder: (context, selectedItem) {
-                return Text(
-                  selectedItem ?? "",
-                  style: TextStyle(
-                    color: Colors.blue,
+                return Padding(
+                  padding: const EdgeInsets.only(left: 15.0),
+                  child: Text(
+                    selectedItem ?? "Search for college",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 );
               },
@@ -291,11 +284,6 @@ class _AllIndiaState extends State<AllIndia> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Text(
-            "Branch",
-            style: kLabelStyle,
-          ),
-          const SizedBox(height: 10),
           Container(
             width: (MediaQuery.of(context).size.width),
             decoration: BoxDecoration(
@@ -313,10 +301,13 @@ class _AllIndiaState extends State<AllIndia> {
                 child: DropdownSearch<String>(
               autoValidateMode: AutovalidateMode.onUserInteraction,
               dropdownBuilder: (context, selectedItem) {
-                return Text(
-                  selectedItem ?? "",
-                  style: TextStyle(
-                    color: Colors.blue,
+                return Padding(
+                  padding: const EdgeInsets.only(left: 15.0),
+                  child: Text(
+                    selectedItem ?? "Search Branch",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 );
               },
@@ -346,13 +337,9 @@ class _AllIndiaState extends State<AllIndia> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Text(
-            "Round",
-            style: kLabelStyle,
-          ),
           const SizedBox(height: 10),
           Container(
-            width: (MediaQuery.of(context).size.width) / 3,
+            width: (MediaQuery.of(context).size.width) * (0.435),
             decoration: BoxDecoration(
               color: const Color(0xFF6CA8F1),
               borderRadius: BorderRadius.circular(10.0),
@@ -364,25 +351,23 @@ class _AllIndiaState extends State<AllIndia> {
                 ),
               ],
             ),
-            padding:
-                const EdgeInsetsDirectional.only(start: 20, top: 5, bottom: 5),
             child: DropdownButton(
               style: const TextStyle(color: Colors.white),
               dropdownColor: const Color(0xFF6CA8F1),
-              value: r,
+              value: rnd,
               items: round.map((e) {
                 return DropdownMenuItem(
                   value: e,
                   child: Padding(
                     padding: const EdgeInsets.only(
-                        top: 5, bottom: 5, right: 5, left: 5),
+                        top: 5, bottom: 5, right: 5, left: 20),
                     child: Text(e),
                   ),
                 );
               }).toList(),
               onChanged: (value) {
                 setState(() {
-                  r = value.toString();
+                  rnd = value.toString();
                 });
               },
               isExpanded: true,
@@ -517,44 +502,32 @@ class _AllIndiaState extends State<AllIndia> {
                 child: SingleChildScrollView(
                   physics: const AlwaysScrollableScrollPhysics(),
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 40.0,
+                    horizontal: 15.0,
                     vertical: 60.0,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      const Center(
-                        child: Text(
-                          'All India Cutoff',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'OpenSans',
-                            fontSize: 30.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 30.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           _buildMarksTF(),
-                          const SizedBox(width: 30.0),
+                          const SizedBox(width: 20.0),
                           _buildRankTF()
                         ],
                       ),
-                      const SizedBox(height: 30.0),
+                      const SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           _buildCityTF(),
-                          const SizedBox(width: 30.0),
+                          const SizedBox(width: 20.0),
                           _buildRoundList(),
                         ],
                       ),
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 20),
                       _buildCollegeList(),
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 20),
                       _buildBranchList(),
                       const SizedBox(height: 20),
                       _buildFilterBtn(),
@@ -576,10 +549,10 @@ class _AllIndiaState extends State<AllIndia> {
                                           padding: const EdgeInsets.all(8.0),
                                           child: ListTile(
                                             title: Text(
-                                              'College:- ${entry['Institute']}',
+                                              '${entry['Institute']}',
                                               style: const TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 18),
+                                                  fontSize: 20),
                                             ),
                                             subtitle: Column(
                                               crossAxisAlignment:
@@ -587,26 +560,38 @@ class _AllIndiaState extends State<AllIndia> {
                                               children: <Widget>[
                                                 const SizedBox(height: 10),
                                                 Text(
-                                                  'Branch:- ${entry['Course Name']}',
+                                                  '${entry['Course Name']}',
                                                   style: const TextStyle(
                                                     color: Colors.white,
-                                                    fontSize: 15,
+                                                    fontSize: 20,
                                                   ),
                                                 ),
-                                                Text(
-                                                  'Rank:- ${entry['Rank']}'
-                                                      .toString(),
-                                                  style: const TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 15),
+                                                SizedBox(
+                                                  height: 10,
                                                 ),
-                                                Text(
-                                                  'Percentile:- ${entry['Score']}'
-                                                      .toString(),
-                                                  style: const TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 15),
-                                                ),
+                                                Row(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Rank: ${entry['Rank']}'
+                                                          .toString(),
+                                                      style: const TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 20),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 20,
+                                                    ),
+                                                    Text(
+                                                      '% : ${entry['Score']}'
+                                                          .toString(),
+                                                      style: const TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 20),
+                                                    ),
+                                                  ],
+                                                )
                                               ],
                                             ),
                                           ),

@@ -20,7 +20,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     if (newpass != '' && repeat != '') {
       if (newpass == repeat) {
         String uri =
-            'http://college-recommendation.onrender.com/Login/Update?password=$newpass&email=$email';
+            'https://backend-mqqg.onrender.com/Login/Update?password=$newpass&email=$email';
         final res = await http.get(Uri.parse(uri));
         // print(res);
         login_Data = jsonDecode(res.body);

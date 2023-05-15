@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 List<String> Branch_Data = [
+  "Clear Selection",
   "Instrumentation Engineering",
   "Electronics Engineering",
   "Mechanical Engineering",

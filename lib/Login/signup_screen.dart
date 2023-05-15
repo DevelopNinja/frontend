@@ -17,14 +17,19 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   String password = '', rollnumber = '', rank = '';
-  String email = '';
+  String email = '', percentile = ' ';
   var Login_Data;
   void SignUp_data() async {
+    print(email);
     email = email.trim();
     password = password.trim();
     rollnumber = rollnumber.trim();
     rank = rank.trim();
-    if (email == '' || password == '' || rollnumber == '' || rank == '') {
+    if (email == '' ||
+        password == '' ||
+        rollnumber == '' ||
+        rank == '' ||
+        percentile == ' ') {
       Login_Data == null;
 
       Fluttertoast.showToast(
@@ -36,37 +41,54 @@ class _SignUpScreenState extends State<SignUpScreen> {
           textColor: Colors.blue,
           fontSize: 16.0);
     } else {
-      final response = await http.get(Uri.parse(
-          'http://college-recommendation.onrender.com/Login/Save?password=$password&email=$email&rank=$rank&rollno=$rollnumber'));
-      if (response.statusCode == 200) {
-        setState(() {
-          Login_Data = jsonDecode(response.body);
-        });
-      }
-
-      if (email != '' && password != '' && rollnumber != '' && rank != '') {
-        if (Login_Data["msg"] == "account exists") {
-          Fluttertoast.showToast(
-              msg: "Account Already exist",
-              toastLength: Toast.LENGTH_SHORT,
-              gravity: ToastGravity.BOTTOM,
-              timeInSecForIosWeb: 1,
-              backgroundColor: Colors.white,
-              textColor: Colors.blue,
-              fontSize: 16.0);
-        } else if (Login_Data["msg"] == "account created") {
-          Fluttertoast.showToast(
-              msg: "Account Created",
-              toastLength: Toast.LENGTH_SHORT,
-              gravity: ToastGravity.BOTTOM,
-              timeInSecForIosWeb: 1,
-              backgroundColor: Colors.white,
-              textColor: Colors.blue,
-              fontSize: 16.0);
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => LoginScreen()));
+      if ((rollnumber.length == 9 || rollnumber.length == 12) &&
+          percentile.length <= 9 &&
+          (rank.length > 2 && rank.length < 6)) {
+        final response = await http.get(Uri.parse(
+            'https://backend-mqqg.onrender.com/Login/Save?password=$password&email=$email&rank=$rank&rollno=$rollnumber'));
+        if (response.statusCode == 200) {
+          setState(() {
+            Login_Data = jsonDecode(response.body);
+          });
         }
+
+        if (email != '' &&
+            password != '' &&
+            rollnumber != '' &&
+            rank != '' &&
+            percentile != '') {
+          if (Login_Data["msg"] == "account exists") {
+            Fluttertoast.showToast(
+                msg: "Account Already exist",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIosWeb: 1,
+                backgroundColor: Colors.white,
+                textColor: Colors.blue,
+                fontSize: 16.0);
+          } else if (Login_Data["msg"] == "account created") {
+            Fluttertoast.showToast(
+                msg: "Account Created",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIosWeb: 1,
+                backgroundColor: Colors.white,
+                textColor: Colors.blue,
+                fontSize: 16.0);
+            // ignore: use_build_context_synchronously
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => LoginScreen()));
+          }
+        }
+      } else {
+        Fluttertoast.showToast(
+            msg: "Enter the correct details",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.white,
+            textColor: Colors.blue,
+            fontSize: 16.0);
       }
     }
   }
@@ -102,6 +124,43 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               onChanged: ((value) => setState(() {
                     email = value;
+                  }))),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildPercentileTF() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const Text(
+          'Percentile',
+          style: kLabelStyle,
+        ),
+        const SizedBox(height: 10.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: kBoxDecorationStyle,
+          height: 60.0,
+          child: TextField(
+              keyboardType: TextInputType.number,
+              style: const TextStyle(
+                color: Colors.white,
+                fontFamily: 'OpenSans',
+              ),
+              decoration: const InputDecoration(
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(top: 14.0),
+                prefixIcon: Icon(
+                  Icons.numbers,
+                  color: Colors.white,
+                ),
+                hintText: 'Enter your Percentile',
+                hintStyle: kHintTextStyle,
+              ),
+              onChanged: ((value) => setState(() {
+                    percentile = value;
                   }))),
         ),
       ],
@@ -232,8 +291,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
         ),
         onPressed: () => {
-          if (!EmailValidator.validate(email))
+          if (EmailValidator.validate(email))
+            {SignUp_data()}
+          else
             {
+              print("Hello World Hrithik"),
+              print(email),
               Fluttertoast.showToast(
                   msg: "Enter Correct Email ID",
                   toastLength: Toast.LENGTH_SHORT,
@@ -243,8 +306,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   textColor: Colors.blue,
                   fontSize: 16.0)
             }
-          else
-            {SignUp_data()}
         },
         child: const Text(
           'SignUp',
@@ -292,7 +353,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   physics: const AlwaysScrollableScrollPhysics(),
                   padding: const EdgeInsets.symmetric(
                     horizontal: 40.0,
-                    vertical: 120.0,
+                    vertical: 60.0,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -319,6 +380,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         height: 30.0,
                       ),
                       _buildRankTF(),
+                      const SizedBox(
+                        height: 30.0,
+                      ),
+                      _buildPercentileTF(),
                       const SizedBox(
                         height: 30.0,
                       ),

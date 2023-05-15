@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:frontend/Login/login_screen.dart';
+import 'package:frontend/Screens/AI.dart';
+import 'package:frontend/Screens/MHTCET.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -17,8 +19,6 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => LoginScreen()));
-      // Navigator.pushReplacement(context,
-      //     MaterialPageRoute(builder: (context) => DropdownSearchExample()));
     });
   }
 

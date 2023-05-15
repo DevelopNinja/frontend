@@ -19,17 +19,18 @@ class _MHTCETState extends State<MHTCET> {
   // All variables
   String? mark,
       rank = '',
-      gender = " ",
-      cast = " ",
-      uni = " ",
+      gender = "Male",
+      cast = "OPEN",
+      uni = "Home_State",
       branch = " ",
       st,
       college = " ",
+      rnd = '1st Round',
       r = ' ';
   String g = " ", city = " ";
   List MHTCET_Data = [];
   var Data = [], Data1 = [];
-  List<String> round = ['1', '2', '3', ' '];
+  List<String> round = ['1st Round', '2nd Round', '3rd Round', ' '];
   // List of items in our dropdown menu
   var Cast_list = [
     " ",
@@ -46,15 +47,21 @@ class _MHTCETState extends State<MHTCET> {
     // "DEFROBCS",
     // "EWS",
   ];
-  var Gender_list = ["General", "Female", " "];
+  var Gender_list = ["Male", "Female"];
   List<String> State_list =
       ["Home_State", "Other_State", "Home_University", " "].toList();
 
   void fetchData() async {
+    if (college == "Clear Selection") {
+      college = " ";
+    }
+    if (branch == "Clear Selection") {
+      branch = " ";
+    }
     if (city.isNotEmpty) {
       city = city[0].toUpperCase() + city.substring(1);
     }
-    if (gender == "General") {
+    if (gender == "Male") {
       g = "G";
     } else {
       g = "L";
@@ -66,15 +73,23 @@ class _MHTCETState extends State<MHTCET> {
     } else {
       st = "H";
     }
+    if (rnd == '1st Round') {
+      r = '1';
+    } else if (rnd == '2st Round') {
+      r = '2';
+    } else {
+      r = '3';
+    }
     String uri =
-        'http://college-recommendation.onrender.com/Huni/Info?Percentage_$g$cast$st[lte]=$mark&Rank_$g$cast$st[gte]=$rank&Category=$g$cast$st&Round=$r';
+        'http://192.168.10.13:8000/Huni/Info?Percentage_$g$cast$st[lte]=$mark&Rank_$g$cast$st[gte]=$rank&Category=$g$cast$st&Round=$r';
     if (rank == null || rank == '') {
       uri =
-          'http://college-recommendation.onrender.com/Huni/Info?Percentage_$g$cast$st[lte]=$mark&Rank_$g$cast$st[gte]=&Category=$g$cast$st';
+          'http://192.168.10.13:8000/Huni/Info?Percentage_$g$cast$st[lte]=$mark&Rank_$g$cast$st[gte]=&Category=$g$cast$st';
     } else if (mark == null || mark == '') {
       uri =
-          'http://college-recommendation.onrender.com/Huni/Info?Percentage_$g$cast$st[lte]=&Rank_$g$cast$st[gte]=$rank&Category=$g$cast$st';
+          'https://192.168.10.13:8000/Huni/Info?Percentage_$g$cast$st[lte]=&Rank_$g$cast$st[gte]=$rank&Category=$g$cast$st';
     }
+    print(uri);
     final response = await http.get(Uri.parse(uri));
 
     if (response.statusCode == 200) {
@@ -83,7 +98,7 @@ class _MHTCETState extends State<MHTCET> {
         Data = MHTCET_Data;
         print(Data[0]['Round']);
       });
-
+      print(Data);
       if (college != " " && college != null) {
         Data = Data.map((e) {
           if (e['College_Name'].contains(college)) {
@@ -160,17 +175,14 @@ class _MHTCETState extends State<MHTCET> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const Text(
-          'Marks',
-          style: kLabelStyle,
-        ),
         const SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
           decoration: kBoxDecorationStyle,
           height: 60.0,
-          width: (MediaQuery.of(context).size.width) / 3,
+          width: (MediaQuery.of(context).size.width) * (0.435),
           child: TextField(
+            keyboardType: TextInputType.number,
             style: const TextStyle(
               color: Colors.white,
               fontFamily: 'OpenSans',
@@ -182,7 +194,7 @@ class _MHTCETState extends State<MHTCET> {
                 Icons.numbers,
                 color: Colors.white,
               ),
-              hintText: 'Marks',
+              hintText: 'Percentile',
               hintStyle: kHintTextStyle,
             ),
             onChanged: (value) => mark = value,
@@ -196,13 +208,9 @@ class _MHTCETState extends State<MHTCET> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Text(
-            "Round",
-            style: kLabelStyle,
-          ),
           const SizedBox(height: 10),
           Container(
-            width: (MediaQuery.of(context).size.width) / 3,
+            width: (MediaQuery.of(context).size.width) * (0.435),
             decoration: BoxDecoration(
               color: const Color(0xFF6CA8F1),
               borderRadius: BorderRadius.circular(10.0),
@@ -214,25 +222,23 @@ class _MHTCETState extends State<MHTCET> {
                 ),
               ],
             ),
-            padding:
-                const EdgeInsetsDirectional.only(start: 20, top: 5, bottom: 5),
             child: DropdownButton(
               style: const TextStyle(color: Colors.white),
               dropdownColor: const Color(0xFF6CA8F1),
-              value: r,
+              value: rnd,
               items: round.map((e) {
                 return DropdownMenuItem(
                   value: e,
                   child: Padding(
                     padding: const EdgeInsets.only(
-                        top: 5, bottom: 5, right: 5, left: 5),
+                        top: 5, bottom: 5, right: 5, left: 20),
                     child: Text(e),
                   ),
                 );
               }).toList(),
               onChanged: (value) {
                 setState(() {
-                  r = value.toString();
+                  rnd = value.toString();
                 });
               },
               isExpanded: true,
@@ -250,10 +256,6 @@ class _MHTCETState extends State<MHTCET> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const Text(
-          'City',
-          style: kLabelStyle,
-        ),
         const SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
@@ -286,17 +288,14 @@ class _MHTCETState extends State<MHTCET> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const Text(
-          'Rank',
-          style: kLabelStyle,
-        ),
         const SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
           decoration: kBoxDecorationStyle,
           height: 60.0,
-          width: (MediaQuery.of(context).size.width) / 3,
+          width: (MediaQuery.of(context).size.width) * (0.435),
           child: TextField(
+            keyboardType: TextInputType.number,
             style: const TextStyle(
               color: Colors.white,
               fontFamily: 'OpenSans',
@@ -322,13 +321,9 @@ class _MHTCETState extends State<MHTCET> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Text(
-            "Gender",
-            style: kLabelStyle,
-          ),
           const SizedBox(height: 10),
           Container(
-            width: (MediaQuery.of(context).size.width) / 3,
+            width: (MediaQuery.of(context).size.width) * (0.435),
             decoration: BoxDecoration(
               color: const Color(0xFF6CA8F1),
               borderRadius: BorderRadius.circular(10.0),
@@ -371,13 +366,9 @@ class _MHTCETState extends State<MHTCET> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Text(
-            "Category",
-            style: kLabelStyle,
-          ),
           const SizedBox(height: 10),
           Container(
-            width: (MediaQuery.of(context).size.width) / 3,
+            width: (MediaQuery.of(context).size.width) * (0.435),
             decoration: BoxDecoration(
               color: const Color(0xFF6CA8F1),
               borderRadius: BorderRadius.circular(10.0),
@@ -420,13 +411,9 @@ class _MHTCETState extends State<MHTCET> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Text(
-            "State",
-            style: kLabelStyle,
-          ),
           const SizedBox(height: 10),
           Container(
-            width: (MediaQuery.of(context).size.width) / 3,
+            width: (MediaQuery.of(context).size.width) * (0.435),
             decoration: BoxDecoration(
               color: const Color(0xFF6CA8F1),
               borderRadius: BorderRadius.circular(10.0),
@@ -469,10 +456,6 @@ class _MHTCETState extends State<MHTCET> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Text(
-            "College",
-            style: kLabelStyle,
-          ),
           const SizedBox(height: 10),
           Container(
             width: (MediaQuery.of(context).size.width),
@@ -491,10 +474,13 @@ class _MHTCETState extends State<MHTCET> {
                 child: DropdownSearch<String>(
               autoValidateMode: AutovalidateMode.onUserInteraction,
               dropdownBuilder: (context, selectedItem) {
-                return Text(
-                  selectedItem ?? "",
-                  style: TextStyle(
-                    color: Colors.white,
+                return Padding(
+                  padding: const EdgeInsets.only(left: 20, top: 5),
+                  child: Text(
+                    selectedItem ?? "Search for College",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 );
               },
@@ -524,10 +510,6 @@ class _MHTCETState extends State<MHTCET> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Text(
-            "Branch",
-            style: kLabelStyle,
-          ),
           const SizedBox(height: 10),
           Container(
             width: (MediaQuery.of(context).size.width),
@@ -546,10 +528,13 @@ class _MHTCETState extends State<MHTCET> {
                 child: DropdownSearch<String>(
               autoValidateMode: AutovalidateMode.onUserInteraction,
               dropdownBuilder: (context, selectedItem) {
-                return Text(
-                  selectedItem ?? "",
-                  style: TextStyle(
-                    color: Colors.white,
+                return Padding(
+                  padding: const EdgeInsets.only(left: 20, top: 5),
+                  child: Text(
+                    selectedItem ?? "Search for Branch",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 );
               },
@@ -635,29 +620,18 @@ class _MHTCETState extends State<MHTCET> {
                 child: SingleChildScrollView(
                   physics: const AlwaysScrollableScrollPhysics(),
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 40.0,
+                    horizontal: 15.0,
                     vertical: 30.0,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      const Center(
-                        child: Text(
-                          'MHTCET Cutoff',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'OpenSans',
-                            fontSize: 30.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
                       const SizedBox(height: 20.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           _buildMarksTF(),
-                          const SizedBox(width: 30.0),
+                          const SizedBox(width: 20),
                           _buildRankTF()
                         ],
                       ),
@@ -666,7 +640,7 @@ class _MHTCETState extends State<MHTCET> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           _buildGenderList(),
-                          const SizedBox(width: 30),
+                          const SizedBox(width: 20),
                           _buildCategoryList()
                         ],
                       ),
@@ -675,17 +649,17 @@ class _MHTCETState extends State<MHTCET> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           _buildStateList(),
-                          const SizedBox(width: 30.0),
+                          const SizedBox(width: 20.0),
                           _buildRoundList(),
                         ],
                       ),
-                      const SizedBox(height: 30.0),
+                      const SizedBox(height: 20.0),
                       _buildCityTF(),
                       const SizedBox(height: 20),
                       _buildCollegeList(),
                       const SizedBox(height: 20),
                       _buildBranchList(),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 20),
                       _buildFilterBtn(),
                       SingleChildScrollView(
                           scrollDirection: Axis.vertical,
@@ -701,40 +675,53 @@ class _MHTCETState extends State<MHTCET> {
                                       padding: const EdgeInsets.all(8.0),
                                       child: Container(
                                         decoration: kBoxDecorationStyle,
-                                        child: ListTile(
-                                          title: Text(
-                                            'College:- ${entry['College_Name']}',
-                                            style: const TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 18),
-                                          ),
-                                          subtitle: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: <Widget>[
-                                              const SizedBox(height: 10),
-                                              Text(
-                                                'Branch:- ${entry['Course']}',
-                                                style: const TextStyle(
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: ListTile(
+                                            title: Text(
+                                              '${entry['College_Name']}',
+                                              style: const TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 15,
+                                                  fontSize: 20),
+                                            ),
+                                            subtitle: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: <Widget>[
+                                                const SizedBox(height: 10),
+                                                Text(
+                                                  '${entry['Course']}',
+                                                  style: const TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 20,
+                                                  ),
                                                 ),
-                                              ),
-                                              Text(
-                                                'Rank_$cast:- ${entry['Rank_$g$cast$st']}'
-                                                    .toString(),
-                                                style: const TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 15),
-                                              ),
-                                              Text(
-                                                'Percentile_$cast:- ${entry['Percentage_$g$cast$st']}'
-                                                    .toString(),
-                                                style: const TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 15),
-                                              ),
-                                            ],
+                                                const SizedBox(height: 10),
+                                                Row(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: <Widget>[
+                                                    Text(
+                                                      'Rank:- ${entry['Rank_$g$cast$st']}'
+                                                          .toString(),
+                                                      style: const TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 20),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 20,
+                                                    ),
+                                                    Text(
+                                                      '% :- ${entry['Percentage_$g$cast$st']}'
+                                                          .toString(),
+                                                      style: const TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 20),
+                                                    ),
+                                                  ],
+                                                )
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ),

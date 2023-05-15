@@ -1,10 +1,16 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Instruc extends StatelessWidget {
   const Instruc({super.key});
+
+  _launch(String url) async {
+    if (await canLaunchUrl(Uri.https(url))) {
+      await launchUrl(Uri.https(url));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +47,7 @@ class Instruc extends StatelessWidget {
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const <Widget>[
+                    children: [
                       Center(
                         child: Text(
                           'Instructions',
@@ -164,6 +170,23 @@ class Instruc extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      RichText(
+                        text: TextSpan(
+                            text: "Click here to visit MHTCET website",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'OpenSans',
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold,
+                                decoration: TextDecoration.underline),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                _launch('cetcell.mahacet.org');
+                              }),
+                      )
                     ],
                   ),
                 ),

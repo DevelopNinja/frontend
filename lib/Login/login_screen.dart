@@ -21,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
   List Login_Data = [];
   void login_data() async {
     final response = await http.get(Uri.parse(
-        'http://college-recommendation.onrender.com/Login/Info?password=$password&email=$email'));
+        'https://backend-mqqg.onrender.com/Login/Info?password=$password&email=$email'));
     // print(jsonDecode(response.body));
     if (response.statusCode == 200) {
       setState(() {
@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
         user_details = Login_Data;
       });
     }
-    if (password != '' && email != '' && password != '' && email != '') {
+    if (password != '' && email != '') {
       if (EmailValidator.validate(email)) {
         if (Login_Data.isEmpty) {
           Fluttertoast.showToast(
@@ -51,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 backgroundColor: Colors.white,
                 textColor: Colors.blue,
                 fontSize: 16.0);
-            // ignore: use_build_context_synchronously
+
             Navigator.pushReplacement(
                 context, MaterialPageRoute(builder: (context) => const Home()));
           }
