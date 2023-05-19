@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:frontend/Screens/AI.dart';
-import 'package:frontend/Screens/MHTCET.dart';
+import 'package:frontend/Screens/CET.dart';
+import 'package:frontend/Screens/jeemain.dart';
 
 class Filter extends StatefulWidget {
   @override
@@ -9,29 +9,39 @@ class Filter extends StatefulWidget {
 }
 
 class _FilterState extends State<Filter> {
+  MaterialStateProperty<Color> getColor(Color color, Color colorPressed) {
+    getColor(Set<MaterialState> states) {
+      if (states.contains(MaterialState.pressed)) {
+        return colorPressed;
+      } else {
+        return color;
+      }
+    }
+
+    return MaterialStateProperty.resolveWith(getColor);
+  }
+
   Widget _buildAIFilterBtn() {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: () => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const AllIndia())),
-        style: ElevatedButton.styleFrom(
-          elevation: 5.0,
-          padding: const EdgeInsets.all(15.0),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.0),
-          ),
-          backgroundColor: Colors.white,
+        style: ButtonStyle(
+          backgroundColor: getColor(Colors.white, Colors.teal),
         ),
-        child: const Text(
-          'Filter',
-          style: TextStyle(
-            color: Color(0xFF527DAA),
-            letterSpacing: 1.5,
-            fontSize: 18.0,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans',
+        onPressed: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => const JeeMains())),
+        child: const Padding(
+          padding: EdgeInsets.all(15.0),
+          child: Text(
+            'Search',
+            style: TextStyle(
+              color: Colors.blue,
+              letterSpacing: 1.5,
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'OpenSans',
+            ),
           ),
         ),
       ),
@@ -43,24 +53,22 @@ class _FilterState extends State<Filter> {
       padding: const EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: () => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const MHTCET())),
-        style: ElevatedButton.styleFrom(
-          elevation: 5.0,
-          padding: const EdgeInsets.all(15.0),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.0),
-          ),
-          backgroundColor: Colors.white,
+        style: ButtonStyle(
+          backgroundColor: getColor(Colors.white, Colors.teal),
         ),
-        child: const Text(
-          'Filter',
-          style: TextStyle(
-            color: Color(0xFF527DAA),
-            letterSpacing: 1.5,
-            fontSize: 18.0,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans',
+        onPressed: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => const CET())),
+        child: const Padding(
+          padding: EdgeInsets.all(15.0),
+          child: Text(
+            'Search',
+            style: TextStyle(
+              color: Colors.blue,
+              letterSpacing: 1.5,
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'OpenSans',
+            ),
           ),
         ),
       ),
@@ -93,7 +101,7 @@ class _FilterState extends State<Filter> {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: double.infinity,
                 child: SingleChildScrollView(
                   physics: const AlwaysScrollableScrollPhysics(),
@@ -105,7 +113,7 @@ class _FilterState extends State<Filter> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
                       const Text(
-                        'All India Cutoff',
+                        'Jee Mains Cutoff',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',

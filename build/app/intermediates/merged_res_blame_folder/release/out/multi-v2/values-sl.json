@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.frontend.app-mergeReleaseResources-9:/values-sl/values-sl.xml",
+            "outputFile": "com.example.frontend.app-mergeReleaseResources-11:/values-sl/values-sl.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\bitup\\.gradle\\caches\\transforms-3\\4ca28c4a71705f8a687c69dda140a277\\transformed\\core-1.6.0\\res\\values-sl\\values-sl.xml",
+                    "source": "C:\\Users\\bitup\\.gradle\\caches\\transforms-3\\9c9ab1a476c120097a79d748cec7161f\\transformed\\core-1.10.1\\res\\values-sl\\values-sl.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,152,254,352,456,559,661,778",
+                        "endColumns": "96,101,97,103,102,101,116,100",
+                        "endOffsets": "147,249,347,451,554,656,773,874"
                     }
                 }
             ]

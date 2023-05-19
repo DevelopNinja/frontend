@@ -1,16 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:frontend/Screens/web.dart';
 
 class Instruc extends StatelessWidget {
-  const Instruc({super.key});
-
-  _launch(String url) async {
-    if (await canLaunchUrl(Uri.https(url))) {
-      await launchUrl(Uri.https(url));
-    }
-  }
+  Instruc({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,12 +37,12 @@ class Instruc extends StatelessWidget {
                   physics: const AlwaysScrollableScrollPhysics(),
                   padding: const EdgeInsets.symmetric(
                     horizontal: 40.0,
-                    vertical: 30.0,
+                    vertical: 60.0,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Center(
+                      const Center(
                         child: Text(
                           'Instructions',
                           style: TextStyle(
@@ -59,11 +53,11 @@ class Instruc extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 40,
                       ),
-                      Text(
-                        "Important Benefits:-",
+                      const Text(
+                        "Important points:-",
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
@@ -71,11 +65,11 @@ class Instruc extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Text(
-                        "1) Know your college admission chances.",
+                      const Text(
+                        "1) Know in which colleges you can get admission.",
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
@@ -83,8 +77,8 @@ class Instruc extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text(
-                        "2) College wise, Course wise JEE Main cutoff for each MHTCET College.",
+                      const Text(
+                        "2) College wise, Course wise JEE Main and MHTCET cutoff for each college in Maharashtra.",
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
@@ -92,28 +86,10 @@ class Instruc extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text(
-                        "3) Seat Matrix Bifurcation of Each Branch with Category in List Format.",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'OpenSans',
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "4)Detail information of all colleges and branches.",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'OpenSans',
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(
+                      const SizedBox(
                         height: 40,
                       ),
-                      Text(
+                      const Text(
                         "Follow these steps to predict your college:",
                         style: TextStyle(
                           color: Colors.white,
@@ -122,11 +98,11 @@ class Instruc extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Text(
-                        "1) Select the Examination on the basis of which you want to filter",
+                      const Text(
+                        "1) Select the Examination on the basis of which you want to search college",
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
@@ -134,8 +110,8 @@ class Instruc extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text(
-                        "2) For AI enter the rank, percentile and round details",
+                      const Text(
+                        "2) For Jee Mains enter the rank, percentile and round details (mandatorily)",
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
@@ -143,8 +119,8 @@ class Instruc extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text(
-                        "3) For MHTCET enter the percentile, rank, gender, Category, State details",
+                      const Text(
+                        "3) For MHTCET enter the percentile, rank, gender, Category, State details (mandatorily)",
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
@@ -152,8 +128,8 @@ class Instruc extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text(
-                        "4) All the filters mentioned above are mandatory to enter",
+                      const Text(
+                        "5) All the other filters like city, college and branch can be used as per requirement",
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
@@ -161,8 +137,8 @@ class Instruc extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text(
-                        "5) All the other filters can be used as per requirement",
+                      const Text(
+                        "6) You will get a list of recommended colleges",
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
@@ -170,13 +146,13 @@ class Instruc extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       RichText(
                         text: TextSpan(
                             text: "Click here to visit MHTCET website",
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.white,
                                 fontFamily: 'OpenSans',
                                 fontSize: 20.0,
@@ -184,7 +160,10 @@ class Instruc extends StatelessWidget {
                                 decoration: TextDecoration.underline),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                _launch('cetcell.mahacet.org');
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Web()));
                               }),
                       )
                     ],

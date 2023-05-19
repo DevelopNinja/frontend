@@ -65,7 +65,7 @@ class _Profile_DetailsState extends State<Profile_Details> {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: double.infinity,
                 child: SingleChildScrollView(
                   physics: const AlwaysScrollableScrollPhysics(),

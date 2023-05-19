@@ -4,10 +4,10 @@
       jars="C:\Users\bitup\Documents\College_Recommendation\frontend\build\app\intermediates\flutter\release\libs.jar"
       resolved="__local_aars__:C:\Users\bitup\Documents\College_Recommendation\frontend\build\app\intermediates\flutter\release\libs.jar:unspecified"/>
   <library
-      name="C:\Users\bitup\Documents\College_Recommendation\frontend\android@@:flutter_keyboard_visibility::release"
-      jars="C:\Users\bitup\Documents\College_Recommendation\frontend\build\flutter_keyboard_visibility\.transforms\c74ec962d95d0f65987a11a5e422421b\transformed\out\jars\classes.jar"
-      resolved="com.jrai.flutter_keyboard_visibility:flutter_keyboard_visibility:unspecified"
-      folder="C:\Users\bitup\Documents\College_Recommendation\frontend\build\flutter_keyboard_visibility\.transforms\c74ec962d95d0f65987a11a5e422421b\transformed\out"
+      name="C:\Users\bitup\Documents\College_Recommendation\frontend\android@@:fluttertoast::release"
+      jars="C:\Users\bitup\Documents\College_Recommendation\frontend\build\fluttertoast\.transforms\0742c81292bfdb34627984c24d77abbe\transformed\out\jars\classes.jar"
+      resolved="com.example.FlutterToast:fluttertoast:unspecified"
+      folder="C:\Users\bitup\Documents\College_Recommendation\frontend\build\fluttertoast\.transforms\0742c81292bfdb34627984c24d77abbe\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -17,10 +17,23 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="C:\Users\bitup\Documents\College_Recommendation\frontend\android@@:fluttertoast::release"
-      jars="C:\Users\bitup\Documents\College_Recommendation\frontend\build\fluttertoast\.transforms\0742c81292bfdb34627984c24d77abbe\transformed\out\jars\classes.jar"
-      resolved="com.example.FlutterToast:fluttertoast:unspecified"
-      folder="C:\Users\bitup\Documents\College_Recommendation\frontend\build\fluttertoast\.transforms\0742c81292bfdb34627984c24d77abbe\transformed\out"
+      name="C:\Users\bitup\Documents\College_Recommendation\frontend\android@@:url_launcher_android::release"
+      jars="C:\Users\bitup\Documents\College_Recommendation\frontend\build\url_launcher_android\.transforms\fc2ca6d32c8451244152af43cba56865\transformed\out\jars\classes.jar"
+      resolved="io.flutter.plugins.urllauncher:url_launcher_android:unspecified"
+      folder="C:\Users\bitup\Documents\College_Recommendation\frontend\build\url_launcher_android\.transforms\fc2ca6d32c8451244152af43cba56865\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="C:\Users\bitup\Documents\College_Recommendation\frontend\android@@:webview_flutter_android::release"
+      jars="C:\Users\bitup\Documents\College_Recommendation\frontend\build\webview_flutter_android\.transforms\ab378eed37041ef04c477e15ea49fd80\transformed\out\jars\classes.jar"
+      resolved="io.flutter.plugins.webviewflutter:webview_flutter_android:unspecified"
+      folder="C:\Users\bitup\Documents\College_Recommendation\frontend\build\webview_flutter_android\.transforms\ab378eed37041ef04c477e15ea49fd80\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -68,13 +81,13 @@
       jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-coroutines-core-jvm\1.5.2\f4cc07a50437659e0043e7da762809a46932b6a0\kotlinx-coroutines-core-jvm-1.5.2.jar"
       resolved="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2"/>
   <library
-      name="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30@jar"
-      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk8\1.5.30\5fd47535cc85f9e24996f939c2de6583991481b0\kotlin-stdlib-jdk8-1.5.30.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30"/>
+      name="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10@jar"
+      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk8\1.8.10\7c002ac41f547a82e81dfebd2a20577a738dbf3f\kotlin-stdlib-jdk8-1.8.10.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10"/>
   <library
-      name="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10@jar"
-      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.7.10\1ef73fee66f45d52c67e2aca12fd945dbe0659bf\kotlin-stdlib-jdk7-1.7.10.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10"/>
+      name="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.10@jar"
+      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.8.10\cb726a23c808a850a43e7d6b9d1ba91b02fe9f05\kotlin-stdlib-jdk7-1.8.10.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.10"/>
   <library
       name="io.flutter:armeabi_v7a_release:1.0.0-ada363ee93b17cfe31587b5102679885cb40837e@jar"
       jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\io.flutter\armeabi_v7a_release\1.0.0-ada363ee93b17cfe31587b5102679885cb40837e\6a06182e7c909f58db7f4dd2b170e4c7492db1a7\armeabi_v7a_release-1.0.0-ada363ee93b17cfe31587b5102679885cb40837e.jar"
@@ -157,10 +170,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.core:core:1.6.0@aar"
-      jars="C:\Users\bitup\.gradle\caches\transforms-3\4ca28c4a71705f8a687c69dda140a277\transformed\core-1.6.0\jars\classes.jar"
-      resolved="androidx.core:core:1.6.0"
-      folder="C:\Users\bitup\.gradle\caches\transforms-3\4ca28c4a71705f8a687c69dda140a277\transformed\core-1.6.0"
+      name="androidx.core:core:1.10.1@aar"
+      jars="C:\Users\bitup\.gradle\caches\transforms-3\9c9ab1a476c120097a79d748cec7161f\transformed\core-1.10.1\jars\classes.jar"
+      resolved="androidx.core:core:1.10.1"
+      folder="C:\Users\bitup\.gradle\caches\transforms-3\9c9ab1a476c120097a79d748cec7161f\transformed\core-1.10.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -170,10 +183,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.lifecycle:lifecycle-runtime:2.2.0@aar"
-      jars="C:\Users\bitup\.gradle\caches\transforms-3\af4014bd5e02c19d06abc41b9651d21a\transformed\lifecycle-runtime-2.2.0\jars\classes.jar"
-      resolved="androidx.lifecycle:lifecycle-runtime:2.2.0"
-      folder="C:\Users\bitup\.gradle\caches\transforms-3\af4014bd5e02c19d06abc41b9651d21a\transformed\lifecycle-runtime-2.2.0"
+      name="androidx.lifecycle:lifecycle-runtime:2.3.1@aar"
+      jars="C:\Users\bitup\.gradle\caches\transforms-3\76da31ad033c53187dd7271282d0f7d2\transformed\lifecycle-runtime-2.3.1\jars\classes.jar"
+      resolved="androidx.lifecycle:lifecycle-runtime:2.3.1"
+      folder="C:\Users\bitup\.gradle\caches\transforms-3\76da31ad033c53187dd7271282d0f7d2\transformed\lifecycle-runtime-2.3.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -222,14 +235,14 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.lifecycle:lifecycle-common:2.2.0@jar"
-      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\androidx.lifecycle\lifecycle-common\2.2.0\4ef09a745007778eef83b92f8f23987a8ea59496\lifecycle-common-2.2.0.jar"
-      resolved="androidx.lifecycle:lifecycle-common:2.2.0"/>
+      name="androidx.lifecycle:lifecycle-common:2.3.1@jar"
+      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\androidx.lifecycle\lifecycle-common\2.3.1\fc466261d52f4433863642fb40d12441ae274a98\lifecycle-common-2.3.1.jar"
+      resolved="androidx.lifecycle:lifecycle-common:2.3.1"/>
   <library
-      name="androidx.arch.core:core-runtime:2.0.0@aar"
-      jars="C:\Users\bitup\.gradle\caches\transforms-3\e5168ae1d5ab03fe8bf4ee87d623deae\transformed\core-runtime-2.0.0\jars\classes.jar"
-      resolved="androidx.arch.core:core-runtime:2.0.0"
-      folder="C:\Users\bitup\.gradle\caches\transforms-3\e5168ae1d5ab03fe8bf4ee87d623deae\transformed\core-runtime-2.0.0"
+      name="androidx.arch.core:core-runtime:2.1.0@aar"
+      jars="C:\Users\bitup\.gradle\caches\transforms-3\56ea02d67edbb15aea212f39ccb5db78\transformed\core-runtime-2.1.0\jars\classes.jar"
+      resolved="androidx.arch.core:core-runtime:2.1.0"
+      folder="C:\Users\bitup\.gradle\caches\transforms-3\56ea02d67edbb15aea212f39ccb5db78\transformed\core-runtime-2.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -273,14 +286,14 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.annotation:annotation:1.2.0@jar"
-      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\androidx.annotation\annotation\1.2.0\57136ff68ee784c6e19db34ed4a175338fadfde1\annotation-1.2.0.jar"
-      resolved="androidx.annotation:annotation:1.2.0"/>
+      name="androidx.annotation:annotation-jvm:1.6.0@jar"
+      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\androidx.annotation\annotation-jvm\1.6.0\a7257339a052df0f91433cf9651231bbb802b502\annotation-jvm-1.6.0.jar"
+      resolved="androidx.annotation:annotation-jvm:1.6.0"/>
   <library
-      name="androidx.annotation:annotation-experimental:1.1.0@aar"
-      jars="C:\Users\bitup\.gradle\caches\transforms-3\8965c941cf4bee4d72541b965c7c9d39\transformed\jetified-annotation-experimental-1.1.0\jars\classes.jar"
-      resolved="androidx.annotation:annotation-experimental:1.1.0"
-      folder="C:\Users\bitup\.gradle\caches\transforms-3\8965c941cf4bee4d72541b965c7c9d39\transformed\jetified-annotation-experimental-1.1.0"
+      name="androidx.annotation:annotation-experimental:1.3.0@aar"
+      jars="C:\Users\bitup\.gradle\caches\transforms-3\ec10578641139d45a328c567f48881a1\transformed\jetified-annotation-experimental-1.3.0\jars\classes.jar"
+      resolved="androidx.annotation:annotation-experimental:1.3.0"
+      folder="C:\Users\bitup\.gradle\caches\transforms-3\ec10578641139d45a328c567f48881a1\transformed\jetified-annotation-experimental-1.3.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -289,6 +302,18 @@
       symbolFile="R.txt"
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
+  <library
+      name="org.jetbrains.kotlin:kotlin-stdlib:1.8.10@jar"
+      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.8.10\6d5560a229477df9406943d5feda5618e98eb64c\kotlin-stdlib-1.8.10.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib:1.8.10"/>
+  <library
+      name="org.jetbrains.kotlin:kotlin-stdlib-common:1.8.10@jar"
+      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-common\1.8.10\a61b182458550492c12aee66157d7b524a63a5ec\kotlin-stdlib-common-1.8.10.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib-common:1.8.10"/>
+  <library
+      name="org.jetbrains:annotations:13.0@jar"
+      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar"
+      resolved="org.jetbrains:annotations:13.0"/>
   <library
       name="androidx.tracing:tracing:1.0.0@aar"
       jars="C:\Users\bitup\.gradle\caches\transforms-3\5b75d2e6479f13c5aed7d8001da507c0\transformed\jetified-tracing-1.0.0\jars\classes.jar"
@@ -303,15 +328,37 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="org.jetbrains.kotlin:kotlin-stdlib:1.7.10@jar"
-      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.7.10\d2abf9e77736acc4450dc4a3f707fa2c10f5099d\kotlin-stdlib-1.7.10.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib:1.7.10"/>
+      name="androidx.webkit:webkit:1.6.1@aar"
+      jars="C:\Users\bitup\.gradle\caches\transforms-3\fd544416a4598cded3870fdc3c94247d\transformed\webkit-1.6.1\jars\classes.jar"
+      resolved="androidx.webkit:webkit:1.6.1"
+      folder="C:\Users\bitup\.gradle\caches\transforms-3\fd544416a4598cded3870fdc3c94247d\transformed\webkit-1.6.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
   <library
-      name="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10@jar"
-      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-common\1.7.10\bac80c520d0a9e3f3673bc2658c6ed02ef45a76a\kotlin-stdlib-common-1.7.10.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10"/>
+      name="androidx.concurrent:concurrent-futures:1.0.0@jar"
+      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\androidx.concurrent\concurrent-futures\1.0.0\c1e77e3ee6f4643b77496a1ddf7a2eef1aefdaa1\concurrent-futures-1.0.0.jar"
+      resolved="androidx.concurrent:concurrent-futures:1.0.0"/>
   <library
-      name="org.jetbrains:annotations:13.0@jar"
-      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar"
-      resolved="org.jetbrains:annotations:13.0"/>
+      name="androidx.interpolator:interpolator:1.0.0@aar"
+      jars="C:\Users\bitup\.gradle\caches\transforms-3\0ba9c48dd5ff84ca64a6f8c4dc29ae01\transformed\interpolator-1.0.0\jars\classes.jar"
+      resolved="androidx.interpolator:interpolator:1.0.0"
+      folder="C:\Users\bitup\.gradle\caches\transforms-3\0ba9c48dd5ff84ca64a6f8c4dc29ae01\transformed\interpolator-1.0.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.guava:listenablefuture:1.0@jar"
+      jars="C:\Users\bitup\.gradle\caches\modules-2\files-2.1\com.google.guava\listenablefuture\1.0\c949a840a6acbc5268d088e47b04177bf90b3cad\listenablefuture-1.0.jar"
+      resolved="com.google.guava:listenablefuture:1.0"/>
 </libraries>

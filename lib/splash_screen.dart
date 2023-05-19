@@ -1,8 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:frontend/Login/login_screen.dart';
-import 'package:frontend/Screens/AI.dart';
-import 'package:frontend/Screens/MHTCET.dart';
+import 'package:frontend/Login/login.dart';
+import 'package:frontend/Screens/CET.dart';
+import 'package:frontend/Screens/Instructions.dart';
+import 'package:frontend/Screens/jeemain.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Timer(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => LoginScreen()));
+          context, MaterialPageRoute(builder: (context) => Login()));
     });
   }
 

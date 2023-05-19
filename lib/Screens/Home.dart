@@ -14,7 +14,7 @@ class _HomeState extends State<Home> {
   int _currentIndex = 0;
 
   final tabs = [
-    const Center(child: Instruc()),
+    Center(child: Instruc()),
     Center(child: Filter()),
     const Center(child: Profile_Details()),
   ];
@@ -43,7 +43,7 @@ class _HomeState extends State<Home> {
               backgroundColor: Colors.blue),
           BottomNavigationBarItem(
               icon: Icon(Icons.search),
-              label: 'Filter College',
+              label: 'Search College',
               backgroundColor: Colors.blue),
           BottomNavigationBarItem(
               icon: Icon(Icons.person_outlined),

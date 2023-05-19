@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.frontend.app-mergeReleaseResources-9:/values-te/values-te.xml",
+            "outputFile": "com.example.frontend.app-mergeReleaseResources-11:/values-te/values-te.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\bitup\\.gradle\\caches\\transforms-3\\4ca28c4a71705f8a687c69dda140a277\\transformed\\core-1.6.0\\res\\values-te\\values-te.xml",
+                    "source": "C:\\Users\\bitup\\.gradle\\caches\\transforms-3\\9c9ab1a476c120097a79d748cec7161f\\transformed\\core-1.10.1\\res\\values-te\\values-te.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,157,265,367,468,574,681,805",
+                        "endColumns": "101,107,101,100,105,106,123,100",
+                        "endOffsets": "152,260,362,463,569,676,800,901"
                     }
                 }
             ]

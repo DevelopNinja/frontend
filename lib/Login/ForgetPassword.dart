@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,9 +12,10 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
-  String newpass = '', repeat = '';
-  String email = '';
-  var login_Data;
+  // Variables
+  bool errorpass = false, erroremail = false;
+  String email = '', newpass = '', repeat = '';
+
   void changePassword() async {
     if (newpass != '' && repeat != '') {
       if (newpass == repeat) {
@@ -23,9 +23,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             'https://backend-mqqg.onrender.com/Login/Update?password=$newpass&email=$email';
         final res = await http.get(Uri.parse(uri));
         // print(res);
-        login_Data = jsonDecode(res.body);
-        // print(login_Data.length);
-        if (!login_Data.isEmpty) {
+        final loginData = jsonDecode(res.body);
+        // print(loginData.length);
+        if (!loginData.isEmpty) {
           Fluttertoast.showToast(
               msg: "Password Updated",
               toastLength: Toast.LENGTH_SHORT,
@@ -66,114 +66,170 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           style: kLabelStyle,
         ),
         const SizedBox(height: 10.0),
-        Container(
-          alignment: Alignment.centerLeft,
-          decoration: kBoxDecorationStyle,
-          height: 60.0,
-          child: TextField(
+        TextField(
+            keyboardType: TextInputType.emailAddress,
             style: const TextStyle(
               color: Colors.white,
               fontFamily: 'OpenSans',
             ),
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top: 14.0),
-              prefixIcon: Icon(
-                Icons.numbers,
+              enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: const BorderSide(color: Colors.white, width: 2)),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: const BorderSide(color: Colors.white, width: 2)),
+              errorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: const BorderSide(color: Colors.red, width: 2)),
+              focusedErrorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: const BorderSide(color: Colors.red, width: 2)),
+              errorText: erroremail ? 'Enter correct email ID' : null,
+              // contentPadding: const EdgeInsets.only(top: 14.0),
+              prefixIcon: const Icon(
+                Icons.email,
                 color: Colors.white,
               ),
               hintText: 'Enter your Email',
               hintStyle: kHintTextStyle,
             ),
-            onChanged: (value) => {email = value, email = email.trim()},
-          ),
-        ),
+            onChanged: ((value) => setState(() {
+                  if (EmailValidator.validate(value) || value == '') {
+                    email = value;
+                    erroremail = false;
+                  } else {
+                    erroremail = true;
+                  }
+                }))),
       ],
     );
   }
 
-  Widget _buildNewPasswordTF() {
+  Widget _buildPasswordTF() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         const Text(
-          'New Password',
+          'Password',
           style: kLabelStyle,
         ),
         const SizedBox(height: 10.0),
-        Container(
-          alignment: Alignment.centerLeft,
-          decoration: kBoxDecorationStyle,
-          height: 60.0,
-          child: TextField(
-            // obscureText: true,
+        TextField(
             style: const TextStyle(
               color: Colors.white,
               fontFamily: 'OpenSans',
             ),
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top: 14.0),
-              prefixIcon: Icon(
-                Icons.lock,
+              enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: const BorderSide(color: Colors.white, width: 2)),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: const BorderSide(color: Colors.white, width: 2)),
+              // contentPadding: const EdgeInsets.only(top: 14.0),
+              prefixIcon: const Icon(
+                Icons.numbers,
                 color: Colors.white,
               ),
-              hintText: 'Enter your New Password',
+              hintText: 'Enter your password',
               hintStyle: kHintTextStyle,
             ),
-            onChanged: (value) => {newpass = value, newpass = newpass.trim()},
-          ),
-        ),
+            onChanged: ((value) => setState(() {
+                  newpass = value;
+                }))),
       ],
     );
   }
 
-  Widget _buildRepeatTF() {
+  Widget _buildReaptPasswordTF() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         const Text(
-          'Enter Password Again',
+          'Password',
           style: kLabelStyle,
         ),
         const SizedBox(height: 10.0),
-        Container(
-          alignment: Alignment.centerLeft,
-          decoration: kBoxDecorationStyle,
-          height: 60.0,
-          child: TextField(
-            // obscureText: true,
+        TextField(
             style: const TextStyle(
               color: Colors.white,
               fontFamily: 'OpenSans',
             ),
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top: 14.0),
-              prefixIcon: Icon(
-                Icons.lock,
+              enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: const BorderSide(color: Colors.white, width: 2)),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: const BorderSide(color: Colors.white, width: 2)),
+              errorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: const BorderSide(color: Colors.red, width: 2)),
+              focusedErrorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: const BorderSide(color: Colors.red, width: 2)),
+              errorText: errorpass ? 'Enter correct email ID' : null,
+              // contentPadding: const EdgeInsets.only(top: 14.0),
+              prefixIcon: const Icon(
+                Icons.numbers,
                 color: Colors.white,
               ),
-              hintText: 'Enter your New Password',
+              hintText: 'Enter your password',
               hintStyle: kHintTextStyle,
             ),
-            onChanged: (value) => {repeat = value, repeat = repeat.trim()},
-          ),
-        ),
+            onChanged: ((value) => setState(() {
+                  if (newpass == value || value == "" || value == null) {
+                    repeat = value;
+                    errorpass = false;
+                  } else {
+                    errorpass = true;
+                  }
+                }))),
       ],
     );
   }
 
-  Widget _buildChangePasswordBtn() {
+  MaterialStateProperty<Color> getColor(Color color, Color colorPressed) {
+    getColor(Set<MaterialState> states) {
+      if (states.contains(MaterialState.pressed)) {
+        return colorPressed;
+      } else {
+        return color;
+      }
+    }
+
+    return MaterialStateProperty.resolveWith(getColor);
+  }
+
+  Widget _buildForgotPasswordBtn() {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
       child: ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: getColor(Colors.white, Colors.teal),
+        ),
         onPressed: () => {
-          if (!EmailValidator.validate(email))
+          if (newpass != '' && email != '' && repeat != '')
             {
               Fluttertoast.showToast(
-                  msg: "Enter Correct Email ID",
+                  msg: "Wait processing update",
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.BOTTOM,
+                  timeInSecForIosWeb: 1,
+                  backgroundColor: Colors.white,
+                  textColor: Colors.blue,
+                  fontSize: 16.0),
+              changePassword()
+            }
+          else
+            {
+              Fluttertoast.showToast(
+                  msg: "Enter all details",
                   toastLength: Toast.LENGTH_SHORT,
                   gravity: ToastGravity.BOTTOM,
                   timeInSecForIosWeb: 1,
@@ -181,25 +237,18 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   textColor: Colors.blue,
                   fontSize: 16.0)
             }
-          else
-            {changePassword()}
         },
-        style: ElevatedButton.styleFrom(
-          elevation: 5.0,
-          padding: const EdgeInsets.all(15.0),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.0),
-          ),
-          backgroundColor: Colors.white,
-        ),
-        child: const Text(
-          'CHANGE PASSWORD',
-          style: TextStyle(
-            color: Color(0xFF527DAA),
-            letterSpacing: 1.5,
-            fontSize: 18.0,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans',
+        child: const Padding(
+          padding: EdgeInsets.all(15.0),
+          child: Text(
+            'Change Password',
+            style: TextStyle(
+              color: Colors.blue,
+              letterSpacing: 1.5,
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'OpenSans',
+            ),
           ),
         ),
       ),
@@ -232,6 +281,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ),
                 ),
               ),
+              // ignore: sized_box_for_whitespace
               Container(
                 height: double.infinity,
                 child: SingleChildScrollView(
@@ -252,22 +302,20 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(
-                        height: 60.0,
-                      ),
+                      const SizedBox(height: 50.0),
                       _buildEmailTF(),
                       const SizedBox(
                         height: 30.0,
                       ),
-                      _buildNewPasswordTF(),
+                      _buildPasswordTF(),
                       const SizedBox(
                         height: 30.0,
                       ),
-                      _buildRepeatTF(),
+                      _buildReaptPasswordTF(),
                       const SizedBox(
                         height: 30.0,
                       ),
-                      _buildChangePasswordBtn(),
+                      _buildForgotPasswordBtn(),
                     ],
                   ),
                 ),

@@ -248,13 +248,37 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "webview_flutter",
+      "rootUri": "file:///C:/Users/bitup/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter-4.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "webview_flutter_android",
+      "rootUri": "file:///C:/Users/bitup/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter_android-3.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "webview_flutter_platform_interface",
+      "rootUri": "file:///C:/Users/bitup/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter_platform_interface-2.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "webview_flutter_wkwebview",
+      "rootUri": "file:///C:/Users/bitup/AppData/Local/Pub/Cache/hosted/pub.dev/webview_flutter_wkwebview-3.4.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "frontend",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-05-15T12:57:21.569288Z",
+  "generated": "2023-05-17T10:28:31.184079Z",
   "generator": "pub",
   "generatorVersion": "2.19.3"
 }
