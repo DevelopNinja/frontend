@@ -53,7 +53,7 @@ class _SignUpState extends State<SignUp> {
       Navigator.of(context).pop();
     } else {
       final response = await http.get(Uri.parse(
-          'https://backend-mqqg.onrender.com/Login/Save?password=$password&email=$email&rank=$rank&rollno=$rollnumber'));
+          'https://backend-mqqg.onrender.com/Login/Save?password=$password&email=$email&rank=$rank&rollno=$rollnumber&percentile=$percentile'));
       if (response.statusCode == 200) {
         setState(() {
           loginData = jsonDecode(response.body);
