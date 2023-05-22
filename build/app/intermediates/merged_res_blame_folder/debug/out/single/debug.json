@@ -1,11 +1,15 @@
 [
     {
-        "merged": "com.example.frontend.app-merged_res-13:/drawable-v21_launch_background.xml.flat",
-        "source": "com.example.frontend.app-main-7:/drawable-v21/launch_background.xml"
+        "merged": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-merged_res-13:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-main-7:\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
         "merged": "com.example.frontend.app-merged_res-13:/mipmap-xhdpi_ic_launcher.png.flat",
         "source": "com.example.frontend.app-main-7:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-merged_res-13:\\mipmap-xxhdpi_logo.png.flat",
+        "source": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-main-7:\\mipmap-xxhdpi\\logo.png"
     },
     {
         "merged": "com.example.frontend.app-merged_res-13:/mipmap-xxxhdpi_ic_launcher.png.flat",
@@ -20,11 +24,47 @@
         "source": "com.example.frontend.app-main-7:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.frontend.app-merged_res-13:/drawable_launch_background.xml.flat",
-        "source": "com.example.frontend.app-main-7:/drawable/launch_background.xml"
+        "merged": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-merged_res-13:\\mipmap-hdpi_logo.png.flat",
+        "source": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-main-7:\\mipmap-hdpi\\logo.png"
     },
     {
         "merged": "com.example.frontend.app-merged_res-13:/mipmap-hdpi_ic_launcher.png.flat",
         "source": "com.example.frontend.app-main-7:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-merged_res-13:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-main-7:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-merged_res-13:\\mipmap-mdpi_logo.png.flat",
+        "source": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-main-7:\\mipmap-mdpi\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-merged_res-13:\\drawable_launch_background.xml.flat",
+        "source": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-main-7:\\drawable\\launch_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-merged_res-13:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-main-7:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-merged_res-13:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-main-7:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-merged_res-13:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-main-7:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-merged_res-13:\\drawable-v21_launch_background.xml.flat",
+        "source": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-main-7:\\drawable-v21\\launch_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-merged_res-13:\\mipmap-xxxhdpi_logo.png.flat",
+        "source": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-main-7:\\mipmap-xxxhdpi\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-merged_res-13:\\mipmap-xhdpi_logo.png.flat",
+        "source": "C:\\Users\\bitup\\.gradle\\daemon\\7.5\\com.example.frontend.app-main-7:\\mipmap-xhdpi\\logo.png"
     }
 ]

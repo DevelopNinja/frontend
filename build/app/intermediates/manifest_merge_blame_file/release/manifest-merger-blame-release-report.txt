@@ -38,8 +38,8 @@
 23-->[androidx.core:core:1.10.1] C:\Users\bitup\.gradle\caches\transforms-3\9c9ab1a476c120097a79d748cec7161f\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
 24        android:icon="@mipmap/ic_launcher"
 24-->C:\Users\bitup\Documents\College_Recommendation\frontend\android\app\src\main\AndroidManifest.xml:9:9-43
-25        android:label="frontend" >
-25-->C:\Users\bitup\Documents\College_Recommendation\frontend\android\app\src\main\AndroidManifest.xml:7:9-33
+25        android:label="CollegeConnector" >
+25-->C:\Users\bitup\Documents\College_Recommendation\frontend\android\app\src\main\AndroidManifest.xml:7:9-41
 26        <activity
 26-->C:\Users\bitup\Documents\College_Recommendation\frontend\android\app\src\main\AndroidManifest.xml:10:9-30:20
 27            android:name="com.example.frontend.MainActivity"

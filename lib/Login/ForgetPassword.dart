@@ -17,6 +17,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   String email = '', newpass = '', repeat = '';
 
   void changePassword() async {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return const Center(child: CircularProgressIndicator());
+        });
     if (newpass != '' && repeat != '') {
       if (newpass == repeat) {
         String uri =
@@ -25,6 +30,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         // print(res);
         final loginData = jsonDecode(res.body);
         // print(loginData.length);
+
         if (!loginData.isEmpty) {
           Fluttertoast.showToast(
               msg: "Password Updated",
@@ -55,6 +61,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           textColor: Colors.blue,
           fontSize: 16.0);
     }
+    Navigator.of(context).pop();
   }
 
   Widget _buildEmailTF() {
@@ -172,7 +179,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               focusedErrorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                   borderSide: const BorderSide(color: Colors.red, width: 2)),
-              errorText: errorpass ? 'Enter correct email ID' : null,
+              errorText: errorpass ? 'Password does not match' : null,
               // contentPadding: const EdgeInsets.only(top: 14.0),
               prefixIcon: const Icon(
                 Icons.numbers,

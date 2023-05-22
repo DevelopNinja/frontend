@@ -84,10 +84,10 @@ class _CETState extends State<CET> {
           return const Center(child: CircularProgressIndicator());
         });
     String uri =
-        'http://backend-mqqg.onrender.com/Huni/Info?Percentage_$g$currcat$st[lte]=$percentile&Rank_$g$currcat$st[gte]=$rank&Category=$g$currcat$st&Round=$r';
+        'https://backend-mqqg.onrender.com/Huni/Info?Percentage_$g$currcat$st[lte]=$percentile&Rank_$g$currcat$st[gte]=$rank&Category=$g$currcat$st&Round=$r';
 
     final response = await http.get(Uri.parse(uri));
-
+    print(uri);
     if (response.statusCode == 200) {
       setState(() {
         mhtcetData = jsonDecode(response.body);
@@ -181,6 +181,9 @@ class _CETState extends State<CET> {
         SizedBox(
           width: (MediaQuery.of(context).size.width) * (0.435),
           child: TextField(
+              maxLength: 9,
+              maxLengthEnforcement:
+                  MaxLengthEnforcement.truncateAfterCompositionEnds,
               keyboardType: TextInputType.number,
               style: const TextStyle(
                 color: Colors.white,
@@ -235,6 +238,9 @@ class _CETState extends State<CET> {
         SizedBox(
           width: (MediaQuery.of(context).size.width) * (0.435),
           child: TextField(
+              maxLength: 6,
+              maxLengthEnforcement:
+                  MaxLengthEnforcement.truncateAfterCompositionEnds,
               keyboardType: TextInputType.number,
               style: const TextStyle(
                 color: Colors.white,

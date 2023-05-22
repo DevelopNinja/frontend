@@ -22,16 +22,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'College Recommendation',
-          style: TextStyle(
-            color: Colors.white,
-            fontFamily: 'OpenSans',
-          ),
-        ),
-        backgroundColor: const Color.fromARGB(255, 129, 182, 248),
-      ),
       body: tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,

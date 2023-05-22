@@ -12,7 +12,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\bi
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.10.1] C:\Users\bitup\.gradle\caches\transforms-3\9c9ab1a476c120097a79d748cec7161f\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from C:\Users\bitup\Documents\College_Recommendation\frontend\android\app\src\main\AndroidManifest.xml:7:9-33
+		ADDED from C:\Users\bitup\Documents\College_Recommendation\frontend\android\app\src\main\AndroidManifest.xml:7:9-41
 	android:icon
 		ADDED from C:\Users\bitup\Documents\College_Recommendation\frontend\android\app\src\main\AndroidManifest.xml:9:9-43
 	android:name

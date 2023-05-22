@@ -188,6 +188,9 @@ class _SignUpState extends State<SignUp> {
         ),
         const SizedBox(height: 10.0),
         TextField(
+            maxLengthEnforcement:
+                MaxLengthEnforcement.truncateAfterCompositionEnds,
+            maxLength: 12,
             style: const TextStyle(
               color: Colors.white,
               fontFamily: 'OpenSans',
@@ -232,11 +235,14 @@ class _SignUpState extends State<SignUp> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         const Text(
-          'Rank',
+          'Rank (0 to 300000)',
           style: kLabelStyle,
         ),
         const SizedBox(height: 10.0),
         TextField(
+            maxLengthEnforcement:
+                MaxLengthEnforcement.truncateAfterCompositionEnds,
+            maxLength: 6,
             keyboardType: TextInputType.number,
             style: const TextStyle(
               color: Colors.white,
@@ -282,11 +288,12 @@ class _SignUpState extends State<SignUp> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         const Text(
-          'Percentile',
+          'Percentile (ex. 39.090807)',
           style: kLabelStyle,
         ),
         const SizedBox(height: 10.0),
         TextField(
+            maxLength: 9,
             keyboardType: TextInputType.number,
             style: const TextStyle(
               color: Colors.white,
@@ -306,8 +313,7 @@ class _SignUpState extends State<SignUp> {
               focusedErrorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                   borderSide: const BorderSide(color: Colors.red, width: 2)),
-              errorText:
-                  errorper ? 'Percentile should be between 0 to 100' : null,
+              errorText: errorper ? 'Enter correct percentile' : null,
               // contentPadding: const EdgeInsets.only(top: 14.0),
               prefixIcon: const Icon(
                 Icons.numbers,
@@ -317,8 +323,11 @@ class _SignUpState extends State<SignUp> {
               hintStyle: kHintTextStyle,
             ),
             onChanged: ((value) => setState(() {
-                  if ((double.parse(value) > 0 && double.parse(value) < 100) ||
-                      value.isEmpty ||
+                  if (value.isEmpty) {
+                    errorper = false;
+                  }
+                  if (double.parse(value) > 0 &&
+                      double.parse(value) < 100 &&
                       value.length == 9) {
                     percentile = double.parse(value);
                     errorper = false;
@@ -437,17 +446,8 @@ class _SignUpState extends State<SignUp> {
                         height: 30.0,
                       ),
                       _buildRollNumberTF(),
-                      const SizedBox(
-                        height: 30.0,
-                      ),
                       _buildRankTF(),
-                      const SizedBox(
-                        height: 30.0,
-                      ),
                       _buildPercentileTF(),
-                      const SizedBox(
-                        height: 30.0,
-                      ),
                       _buildSignUpBtn(),
                     ],
                   ),

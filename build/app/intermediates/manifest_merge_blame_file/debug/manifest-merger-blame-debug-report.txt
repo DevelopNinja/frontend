@@ -39,7 +39,7 @@
 27-->[androidx.core:core:1.10.1] C:\Users\bitup\.gradle\caches\transforms-3\9c9ab1a476c120097a79d748cec7161f\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
 28        android:debuggable="true"
 29        android:icon="@mipmap/ic_launcher"
-30        android:label="frontend" >
+30        android:label="CollegeConnector" >
 31        <activity
 32            android:name="com.example.frontend.MainActivity"
 33            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

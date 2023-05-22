@@ -51,7 +51,7 @@ class _JeeMainsState extends State<JeeMains> {
     }
 
     String uri =
-        'http://backend-mqqg.onrender.com/AI/Info?Rank[gte]=$rank&Score[lte]=$percentile&Round=$r';
+        'https://backend-mqqg.onrender.com/AI/Info?Rank[gte]=$rank&Score[lte]=$percentile&Round=$r';
     final response = await http.get(Uri.parse(uri));
     if (response.statusCode == 200) {
       setState(() {
@@ -59,7 +59,7 @@ class _JeeMainsState extends State<JeeMains> {
         data = fetchedData;
       });
 
-      if (college != " " && college != null) {
+      if (college != " ") {
         data = data
             .map((e) {
               if (e['Institute'].contains(college)) {
@@ -149,6 +149,9 @@ class _JeeMainsState extends State<JeeMains> {
         SizedBox(
           width: (MediaQuery.of(context).size.width) * (0.435),
           child: TextField(
+              maxLength: 9,
+              maxLengthEnforcement:
+                  MaxLengthEnforcement.truncateAfterCompositionEnds,
               keyboardType: TextInputType.number,
               style: const TextStyle(
                 color: Colors.white,
@@ -203,6 +206,9 @@ class _JeeMainsState extends State<JeeMains> {
         SizedBox(
           width: (MediaQuery.of(context).size.width) * (0.435),
           child: TextField(
+              maxLength: 6,
+              maxLengthEnforcement:
+                  MaxLengthEnforcement.truncateAfterCompositionEnds,
               keyboardType: TextInputType.number,
               style: const TextStyle(
                 color: Colors.white,
