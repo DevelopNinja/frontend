@@ -19,7 +19,7 @@ class CET extends StatefulWidget {
 class _CETState extends State<CET> {
   // Variables
   bool errorrank = false, errorper = false;
-  String? currRound = '',
+  String? currRound = '1st Round',
       college = '',
       branch = '',
       currgender = 'Male',
@@ -31,7 +31,7 @@ class _CETState extends State<CET> {
   String city = " ";
   int? rank;
   double? percentile;
-  List<String> round = ['1st Round', '2nd Round', '3rd Round'],
+  List<String> round = ["1st Round", "2nd Round", "3rd Round"],
       castList = [
         "OPEN",
         "SC",
